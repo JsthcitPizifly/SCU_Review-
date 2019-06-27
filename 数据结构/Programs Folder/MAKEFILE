@@ -1,0 +1,552 @@
+# Standard UNIX
+CFLAGS= -s -O -DUNIX
+# Debugging
+#CFLAGS= -g -DUNIX
+CC= g++
+
+# Imlicit pattern rule for making .o files from .cpp files
+%.o: %.cpp
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+#### Do the chapters #######################################################
+
+all: c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12 c13 c14
+
+c2: fact toh fib
+
+c3: largest bsearch flags binsimp collatz
+
+c4: alist llist llistFL freetest1 freetest2 dlist astack lstack aqueue lqueue Payroll UALdict ULLdict SAlist SALdict
+
+c5: varnodeu varnodei varnodec preorder BST maxheap huffman huffman1 travtest
+
+c6: gentree ufmain ufsmain
+
+c7: comptest slowsort shellsort qsort sort
+
+slowsort: inssort bubsort selsort
+
+shellsort: shsort shsort3
+
+qsort: qsort1 qsort2 qsort3 qsort4
+
+sort: mrgsort1 mrgsort2 mrgsort3 heapsort radix
+
+c8: genfile exmrg1 exmrg2 exmrg3
+
+c9: hash hashdict
+
+c10: ttmain BPmain
+
+c11: c11m c11l
+
+c11m: grtestm grdfsm grtsdm grbfsm grtsbm grdijkm1 grdijkm2 grfloydm grprimm1 grprimm2 grkruskm
+
+c11l: grtestl grdfsl grtsdl grbfsl grtsbl grdijkl1 grdijkl2 grfloydl grpriml1 grpriml2 grkruskl
+
+c12: skipmain MemMan
+
+c13: KDmain
+
+c14: grconcomm
+
+### Cleanup Section ########################################################
+
+cleanup:
+	rm -f *~ *.core core
+
+cleanall: cleanup clean2 clean3 clean4 clean5 clean6 clean7 clean8 clean9 clean10 clean11 clean12 clean13 clean14
+
+clean2:
+	rm -f fact.o fact toh.o toh fib.o fib
+
+clean3:
+	rm -f largest.o largest bsearch.o bsearch flags.o\
+                flags binsimp.o binsimp collatz.o collatz
+
+clean4:
+	rm -f alist Alistmain.o llist Llistmain.o llistFL LlistFLmain.o\
+		 dlist Dlistmain.o freetest1 freetest1.o freetest2\
+		 freetest2.o astack Astackmain.o lstack Lstackmain.o\
+		 aqueue Aqueuemain.o lqueue Lqueuemain.o UALdict\
+		 UALdictmain.o ULLdict ULLdictmain.o SAlist SAlistmain.o\
+		 SALdict SALdictmain.o Payroll Payroll.o
+
+clean5:
+	rm -f varnodeu varnodeu.o varnodei varnodei.o varnodec varnodec.o\
+		 preorder.o preorder BST BSTmain.o maxheap heapmain.o\
+		 huffman huffman.o huffman1 huffman1.o travtest travtest.o
+
+clean6:
+	rm -f gentree genmain.o ufmain ufmain.o ufsmain ufsmain.o
+
+clean7:
+	rm -f bubsort bubsort.o heapsort heapsort.o inssort inssort.o mrgsort1 mrgsort1.o mrgsort2 mrgsort2.o mrgsort3 mrgsort3.o qsort1 qsort1.o qsort2 qsort2.o qsort3 qsort3.o qsort4 qsort4.o radix radix.o selsort selsort.o shsort shsort.o shsort3 shsort3.o comptest comptest.o
+
+clean8:
+	rm -f genfile genfile.o exmrg1 exmrg1.o exmrg2 exmrg2.o exmrg3 exmrg3.o
+
+clean9:
+	rm -f hash hash.o hashdict hashdict.o
+
+clean10:
+	rm -f ttmain ttmain.o BPmain BPmain.o
+
+clean11:
+	rm -f grtestm grtestm.o grdfsm grdfsm.o grtsdm grtsdm.o grbfsm grbfsm.o grtsbm grtsbm.o grdijkm1 grdijkm1.o grdijkm2 grdijkm2.o grfloydm grfloydm.o grprimm1 grprimm1.o grprimm2 grprimm2.o grkruskm grkruskm.o grtestl grtestl.o grdfsl grdfsl.o grtsdl grtsdl.o grbfsl grbfsl.o grtsbl grtsbl.o grdijkl1 grdijkl1.o grdijkl2 grdijkl2.o grfloydl grfloydl.o grpriml1 grpriml1.o grpriml2 grpriml2.o grkruskl grkruskl.o
+
+clean12:
+	rm -f skipmain skipmain.o MemMan MemMan.o
+
+clean13:
+	rm -f KDmain KDmain.o
+
+clean14:
+	rm -f grconcomm grconcomm.o
+
+### Chapter 2 #########################################################
+
+fact: fact.o
+	$(CC) $(CFLAGS) fact.o -o fact
+
+fact.o: fact.cpp astack.h book.h
+
+toh: toh.o
+	$(CC) $(CFLAGS) toh.o -o toh
+
+toh.o: toh.cpp astack.h book.h
+
+fib: fib.o
+	$(CC) $(CFLAGS) fib.o -o fib
+
+fib.o: book.h
+
+### Chapter 3 #########################################################
+
+largest: largest.o
+	$(CC) $(CFLAGS) largest.o -o largest
+
+largest.o: largest.cpp permute.h book.h
+
+bsearch: bsearch.o
+	$(CC) $(CFLAGS) bsearch.o -o bsearch
+
+bsearch.o: bsearch.cpp book.h
+
+flags: flags.o
+	$(CC) $(CFLAGS) flags.o -o flags
+
+flags.o: flags.cpp book.h
+
+binsimp: binsimp.o
+	$(CC) $(CFLAGS) binsimp.o -o binsimp
+
+binsimp.o: binsimp.cpp permute.h book.h
+
+collatz: collatz.o
+	$(CC) $(CFLAGS) collatz.o -o collatz
+
+collatz.o: collatz.cpp book.h
+
+### Chapter 4 #########################################################
+
+alist: Alistmain.o
+	$(CC) $(CFLAGS) Alistmain.o -o alist
+
+Alistmain.o: Alistmain.cpp alist.h book.h
+
+llist: Llistmain.o
+	$(CC) $(CFLAGS) Llistmain.o -o llist
+
+Llistmain.o: Llistmain.cpp link.h llist.h llist.h book.h
+
+llistFL: LlistFLmain.o
+	$(CC) $(CFLAGS) LlistFLmain.o -o llistFL
+
+LlistFLmain.o: LlistFLmain.cpp linkFL.h llist.h book.h
+
+freetest1: freetest1.o
+	$(CC) $(CFLAGS) freetest1.o -o freetest1
+
+freetest1.o: freetest1.cpp book.h link.h
+
+freetest2: freetest2.o
+	$(CC) $(CFLAGS) freetest2.o -o freetest2
+
+freetest2.o: freetest2.cpp book.h linkFL.h
+
+dlist: Dlistmain.o
+	$(CC) $(CFLAGS) Dlistmain.o -o dlist
+
+Dlistmain.o: Dlistmain.cpp dlink.h dlist.h book.h
+
+astack: Astackmain.o
+	$(CC) $(CFLAGS) Astackmain.o -o astack
+
+Astackmain.o: Astackmain.cpp book.h astack.h stack.h astack.h
+
+lstack: Lstackmain.o
+	$(CC) $(CFLAGS) Lstackmain.o -o lstack
+
+Lstackmain.o: Lstackmain.cpp book.h lstack.h stack.h
+
+aqueue: Aqueuemain.o
+	$(CC) $(CFLAGS) Aqueuemain.o -o aqueue
+
+Aqueuemain.o: Aqueuemain.cpp book.h queue.h aqueue.h
+
+lqueue: Lqueuemain.o
+	$(CC) $(CFLAGS) Lqueuemain.o -o lqueue
+
+Lqueuemain.o: Lqueuemain.cpp book.h queue.h lqueue.h
+
+Payroll: Payroll.o
+	$(CC) $(CFLAGS) Payroll.o -o Payroll
+
+Payroll.o: Payroll.cpp book.h
+
+UALdict: UALdictmain.o
+	$(CC) $(CFLAGS) UALdictmain.o -o UALdict
+
+UALdictmain.o: UALdictmain.cpp book.h compare.h alist.h dictionary.h UALdict.h
+
+ULLdict: ULLdictmain.o
+	$(CC) $(CFLAGS) ULLdictmain.o -o ULLdict
+
+ULLdictmain.o: ULLdictmain.cpp book.h compare.h alist.h dictionary.h ULLdict.h
+
+SAlist: SAlistmain.o
+	$(CC) $(CFLAGS) SAlistmain.o -o SAlist
+
+SAlistmain.o: SAlistmain.cpp book.h compare.h list.h alist.h salist.h
+
+SALdict: SALdictmain.o
+	$(CC) $(CFLAGS) SALdictmain.o -o SALdict
+
+SALdictmain.o: SALdictmain.cpp book.h compare.h list.h alist.h salist.h dictionary.h SALdict.h
+
+### Chapter 5 #########################################################
+
+varnodeu: varnodeu.o
+	$(CC) $(CFLAGS) varnodeu.o -o varnodeu
+
+varnodeu.o: varnodeu.cpp book.h
+
+varnodei: varnodei.o
+	$(CC) $(CFLAGS) varnodei.o -o varnodei
+
+varnodei.o: varnodei.cpp book.h
+
+varnodec: varnodec.o
+	$(CC) $(CFLAGS) varnodec.o -o varnodec
+
+varnodec.o: varnodec.cpp book.h
+
+preorder: preorder.o
+	$(CC) $(CFLAGS) preorder.o -o preorder
+
+preorder.o: preorder.cpp binnode.h
+
+BST: BSTmain.o
+	$(CC) $(CFLAGS) BSTmain.o -o BST
+
+BSTmain.o: BSTmain.cpp book.h compare.h dictionary.h BST.h
+
+maxheap: heapmain.o
+	$(CC) $(CFLAGS) heapmain.o -o maxheap
+
+heapmain.o: heapmain.cpp book.h permute.h maxheap.h
+
+huffman: huffman.o
+	$(CC) $(CFLAGS) huffman.o -o huffman
+
+huffman.o: huffman.cpp book.h freqpair.h sllist.h linkFL.h list.h llist.h
+
+huffman1: huffman1.o
+	$(CC) $(CFLAGS) huffman1.o -o huffman1
+
+huffman1.o: huffman1.cpp book.h freqpair.h linkFL.h list.h llist.h sllist.h
+
+travtest: travtest.o
+	$(CC) $(CFLAGS) travtest.o -o travtest
+
+travtest.o: travtest.cpp book.h
+
+### Chapter 6 #########################################################
+
+gentree: genmain.o
+	$(CC) $(CFLAGS) genmain.o -o gentree
+
+genmain.o: genmain.cpp book.h
+
+ufmain: ufmain.o
+	$(CC) $(CFLAGS) ufmain.o -o ufmain
+
+ufmain.o: ufmain.cpp book.h uf.h
+
+ufsmain: ufsmain.o
+	$(CC) $(CFLAGS) ufsmain.o -o ufsmain
+
+ufsmain.o: ufsmain.cpp book.h ufs.h
+
+### Chapter 7 #########################################################
+
+comptest: comptest.o
+	$(CC) $(CFLAGS) comptest.o -o comptest
+
+comptest.o: comptest.cpp book.h
+
+inssort: inssort.o
+	$(CC) $(CFLAGS) inssort.o -o inssort
+
+inssort.o: inssort.cpp book.h compare.h sortmain.cpp
+
+bubsort: bubsort.o
+	$(CC) $(CFLAGS) bubsort.o -o bubsort
+
+bubsort.o: bubsort.cpp book.h compare.h sortmain.cpp
+
+selsort: selsort.o
+	$(CC) $(CFLAGS) selsort.o -o selsort
+
+selsort.o: selsort.cpp book.h compare.h sortmain.cpp
+
+shsort: shsort.o
+	$(CC) $(CFLAGS) shsort.o -o shsort
+
+shsort.o: shsort.cpp book.h compare.h sortmain.cpp
+
+shsort3: shsort3.o
+	$(CC) $(CFLAGS) shsort3.o -o shsort3
+
+shsort3.o: shsort3.cpp book.h compare.h sortmain.cpp
+
+qsort1: qsort1.o
+	$(CC) $(CFLAGS) qsort1.o -o qsort1
+
+qsort1.o: qsort1.cpp book.h compare.h sortmain.cpp
+
+qsort2: qsort2.o
+	$(CC) $(CFLAGS) qsort2.o -o qsort2
+
+qsort2.o: qsort2.cpp book.h compare.h sortmain.cpp
+
+qsort3: qsort3.o
+	$(CC) $(CFLAGS) qsort3.o -o qsort3
+
+qsort3.o: qsort3.cpp book.h compare.h sortmain.cpp
+
+qsort4: qsort4.o
+	$(CC) $(CFLAGS) qsort4.o -o qsort4
+
+qsort4.o: qsort4.cpp book.h compare.h sortmain.cpp
+
+mrgsort1: mrgsort1.o
+	$(CC) $(CFLAGS) mrgsort1.o -o mrgsort1
+
+mrgsort1.o: mrgsort1.cpp book.h compare.h sortmain.cpp
+
+mrgsort2: mrgsort2.o
+	$(CC) $(CFLAGS) mrgsort2.o -o mrgsort2
+
+mrgsort2.o: mrgsort2.cpp book.h compare.h sortmain.cpp
+
+mrgsort3: mrgsort3.o
+	$(CC) $(CFLAGS) mrgsort3.o -o mrgsort3
+
+mrgsort3.o: mrgsort3.cpp book.h compare.h sortmain.cpp
+
+heapsort: heapsort.o
+	$(CC) $(CFLAGS) heapsort.o -o heapsort
+
+heapsort.o: heapsort.cpp maxheap.h book.h compare.h sortmain.cpp
+
+radix: radix.o
+	$(CC) $(CFLAGS) radix.o -o radix
+
+radix.o: radix.cpp book.h compare.h sortmain.cpp
+
+### Chapter 8 #########################################################
+
+genfile: genfile.o
+	$(CC) $(CFLAGS) genfile.o -o genfile
+
+genfile.o: genfile.cpp book.h
+
+exmrg1: exmrg1.o
+	$(CC) $(CFLAGS) exmrg1.o -o exmrg1
+
+exmrg1.o: exmrg1.cpp book.h
+
+exmrg2: exmrg2.o
+	$(CC) $(CFLAGS) exmrg2.o -o exmrg2
+
+exmrg2.o: exmrg2.cpp book.h
+
+exmrg3: exmrg3.o
+	$(CC) $(CFLAGS) exmrg3.o -o exmrg3
+
+exmrg3.o: exmrg3.cpp book.h
+
+### Chapter 9 ########################################################
+
+hash: hash.o
+	$(CC) $(CFLAGS) hash.o -o hash
+
+hash.o: hash.cpp book.h
+
+hashdict: hashdict.o
+	$(CC) $(CFLAGS) hashdict.o -o hashdict
+
+hashdict.o: hashdict.cpp hashdict.h book.h compare.h
+
+### Chapter 10 #######################################################
+
+ttmain: ttmain.o
+	$(CC) $(CFLAGS) ttmain.o -o ttmain
+
+ttmain.o: ttmain.cpp book.h compare.h ttnode.h tt.h
+
+BPmain: BPmain.o
+	$(CC) $(CFLAGS) BPmain.o -o BPmain
+
+BPmain.o: BPmain.cpp book.h compare.h
+
+### Chapter 11 #######################################################
+
+grtestm: grtestm.o
+	$(CC) $(CFLAGS) grtestm.o -o grtestm
+
+grtestm.o: grtestm.cpp grmat.h graph.h graphutil.cpp
+
+grdfsm: grdfsm.o
+	$(CC) $(CFLAGS) grdfsm.o -o grdfsm
+
+grdfsm.o: grdfsm.cpp grmat.h graph.h graphutil.cpp
+
+grtsdm: grtsdm.o
+	$(CC) $(CFLAGS) grtsdm.o -o grtsdm
+
+grtsdm.o: grtsdm.cpp grmat.h graph.h graphutil.cpp
+
+grbfsm: grbfsm.o
+	$(CC) $(CFLAGS) grbfsm.o -o grbfsm
+
+grbfsm.o: grbfsm.cpp aqueue.h queue.h grmat.h graph.h graphutil.cpp
+
+grtsbm: grtsbm.o
+	$(CC) $(CFLAGS) grtsbm.o -o grtsbm
+
+grtsbm.o: grtsbm.cpp aqueue.h queue.h grmat.h graph.h graphutil.cpp
+
+grdijkm1: grdijkm1.o
+	$(CC) $(CFLAGS) grdijkm1.o -o grdijkm1
+
+grdijkm1.o: grdijkm1.cpp grmat.h graph.h graphutil.cpp
+
+grdijkm2: grdijkm2.o
+	$(CC) $(CFLAGS) grdijkm2.o -o grdijkm2
+
+grdijkm2.o: grdijkm2.cpp minheap.h grmat.h graph.h graphutil.cpp
+
+grfloydm: grfloydm.o
+	$(CC) $(CFLAGS) grfloydm.o -o grfloydm
+
+grfloydm.o: grfloydm.cpp grmat.h graph.h graphutil.cpp
+
+grprimm1: grprimm1.o
+	$(CC) $(CFLAGS) grprimm1.o -o grprimm1
+
+grprimm1.o: grprimm1.cpp grmat.h graph.h graphutil.cpp
+
+grprimm2: grprimm2.o
+	$(CC) $(CFLAGS) grprimm2.o -o grprimm2
+
+grprimm2.o: grprimm2.cpp minheap.h grmat.h graph.h graphutil.cpp
+
+grkruskm: grkruskm.o
+	$(CC) $(CFLAGS) grkruskm.o -o grkruskm
+
+grkruskm.o: grkruskm.cpp uf.h minheap.h grmat.h graph.h graphutil.cpp
+
+
+grtestl: grtestl.o
+	$(CC) $(CFLAGS) grtestl.o -o grtestl
+
+grtestl.o: grtestl.cpp grlist.h  graph.h graphutil.cpp
+
+grdfsl: grdfsl.o
+	$(CC) $(CFLAGS) grdfsl.o -o grdfsl
+
+grdfsl.o: grdfsl.cpp grlist.h graph.h graphutil.cpp
+
+grtsdl: grtsdl.o
+	$(CC) $(CFLAGS) grtsdl.o -o grtsdl
+
+grtsdl.o: grtsdl.cpp grlist.h graph.h graphutil.cpp
+
+grbfsl: grbfsl.o
+	$(CC) $(CFLAGS) grbfsl.o -o grbfsl
+
+grbfsl.o: grbfsl.cpp aqueue.h queue.h grlist.h graph.h graphutil.cpp
+
+grtsbl: grtsbl.o
+	$(CC) $(CFLAGS) grtsbl.o -o grtsbl
+
+grtsbl.o: grtsbl.cpp aqueue.h queue.h grlist.h graph.h graphutil.cpp
+
+grdijkl1: grdijkl1.o
+	$(CC) $(CFLAGS) grdijkl1.o -o grdijkl1
+
+grdijkl1.o: grdijkl1.cpp grlist.h graph.h  graphutil.cpp
+
+grdijkl2: grdijkl2.o
+	$(CC) $(CFLAGS) grdijkl2.o -o grdijkl2
+
+grdijkl2.o: grdijkl2.cpp minheap.h grlist.h graph.h graphutil.cpp
+
+grfloydl: grfloydl.o
+	$(CC) $(CFLAGS) grfloydl.o -o grfloydl
+
+grfloydl.o: grfloydl.cpp grlist.h graph.h graphutil.cpp
+
+grpriml1: grpriml1.o
+	$(CC) $(CFLAGS) grpriml1.o -o grpriml1
+
+grpriml1.o: grpriml1.cpp grlist.h graph.h graphutil.cpp
+
+grpriml2: grpriml2.o
+	$(CC) $(CFLAGS) grpriml2.o -o grpriml2
+
+grpriml2.o: grpriml2.cpp minheap.h grlist.h graph.h graphutil.cpp
+
+grkruskl: grkruskl.o
+	$(CC) $(CFLAGS) grkruskl.o -o grkruskl
+
+grkruskl.o: grkruskl.cpp uf.h minheap.h grlist.h graph.h graphutil.cpp
+
+### Chapter 12 #######################################################
+
+skipmain: skipmain.o
+	$(CC) $(CFLAGS) skipmain.o -o skipmain
+
+skipmain.o: skipmain.cpp dictionary.h skiplist.h book.h
+
+MemMan: MemMan.o
+	$(CC) $(CFLAGS) MemMan.o -o MemMan
+
+MemMan.o: MemMan.cpp MemMan.h
+
+### Chapter 13 #######################################################
+
+KDmain: KDmain.o
+	$(CC) $(CFLAGS) KDmain.o -o KDmain
+
+KDmain.o: KDmain.cpp binnode.h
+
+### Chapter 14 #######################################################
+
+grconcomm: grconcomm.o
+	$(CC) $(CFLAGS) grconcomm.o -o grconcomm
+
+grconcomm.o: grconcomm.cpp graph.h graphutil.cpp

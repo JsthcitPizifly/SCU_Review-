@@ -1,0 +1,79 @@
+Chapter 1  Data Structures and Algorithms: Instructor's CD questions
+
+1. The primary purpose of most computer programs is
+   a) to perform a mathematical calculation.
+   *b) to store and retrieve information.
+   c) to sort a collection of records.
+   d) all of the above.
+   e) none of the above.
+
+2. An integer is a 
+   *a) simple type
+   b) aggregate type
+   c) composite type
+   d) a and b
+   e) none of the above
+
+3. A payroll records is a
+   a) simple type
+   b) aggregate type
+   c) composite type
+   *d) a and b
+   e) none of the above
+
+4. Which of the following should NOT be viewed as an ADT?
+   a) list
+   b) integer
+   c) array
+   *d) none of the above
+
+5. A mathematical function is most like a
+   *a) Problem
+   b) Algorithm
+   c) Program
+
+6. An algorithm must be or do all of the following EXCEPT:
+   a) correct
+   b) composed of concrete steps
+   *c) ambiguous
+   d) composed of a finite number of steps
+   e) terminate
+
+7. A solution is efficient if
+  a. it solves a problem within the require resource constraints.
+  b. it solves a problem within human reaction time.
+  c. it solves a problem faster than other known solutions.
+  d. a and b.
+  *e. a and c.
+  f. b and c. 
+
+8. An array is
+a) A contiguous block of memory locations where each memory location
+stores a fixed-length data item.
+b) An ADT composed of a homogeneous collection of data items, each
+data item identified by a particular number.
+c) a set of integer values.
+*d) a and b.
+e) a and c.
+f) b and c.
+
+9. Order the following steps to selecting a data structure to solve a
+problem.
+ (1) Determine the basic operations to be supported.
+ (2) Quantify the resource constraints for each operation.
+ (3) Select the data structure that best meets these requirements.
+ (4) Analyze the problem to determine the resource constraints that any
+     solution must meet.
+
+a) (1, 2, 3, 4)
+b) (2, 3, 1, 4)
+c) (2, 1, 3, 4)
+*d) (1, 2, 4, 3)
+e) (1, 4, 3, 2)
+
+10. Searching for all those records in a database with key value
+between 10 and 100 is known as:
+a) An exact match query.
+*b) A range query.
+c) A sequential search.
+d) A binary search.

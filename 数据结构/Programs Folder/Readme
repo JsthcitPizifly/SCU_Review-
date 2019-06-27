@@ -1,0 +1,17 @@
+Code examples for the book "A Practical Introduction to Data
+Structures and ALgorithm Analysis, 2nd Edition"
+by Clifford A. Shaffer.
+
+This directory contains the raw source for the code examples from the
+book, along with various drivers, testors, and other scaffolding for
+those examples.  Note that the code examples in the book are (usually)
+inserted directly from the files in this directory, in an effort to
+insure correctness of the code examples.  This necessitates what might
+appear to be odd decomposition of the code files.  In general, there
+are three types of code files: .s, .h, and .x files.  .x files are
+code fragments that actually appear in the book.  .h files are normal
+.h files for C++.  .s files are parts of source code that must be put
+together to form the full sourcecode files.  The script "setup" will
+put the various pieces together, ready for compilation.  In addition,
+the combined pieces are what a person should be looking at to
+understand the implementations.

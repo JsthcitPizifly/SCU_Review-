@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+<script language="JavaScript">
+<!--
+
+		
+	function gotoHierarchyListItem(formName) {
+
+		if (formName == 'MenuForm')
+		{	
+			if (window.document.MenuForm.selectURL.options[window.document.MenuForm.selectURL.selectedIndex].value != '') 
+			{
+	            window.location.href = window.document.MenuForm.selectURL.options[window.document.MenuForm.selectURL.selectedIndex].value;
+	            
+			}		
+		}
+		else if (formName == 'Reference1Form')
+		{
+			if (window.document.Reference1Form.selectURL.options[window.document.Reference1Form.selectURL.selectedIndex].value != '') 
+			{
+	            window.location.href = window.document.Reference1Form.selectURL.options[window.document.Reference1Form.selectURL.selectedIndex].value;
+			}		
+		
+		}
+	}		
+//-->
+</script>
+
+
+
+	  </head>
+<body bgcolor=#0F7F91 topmargin=0 leftmargin=0 marginheight=0 marginwidth=0> 
+<form name="disciplineForm"> 
+	<TABLE  BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD align=right>
+			<a href="main.html" target=main><IMG SRC="images/top1_01.gif" WIDTH=248 HEIGHT=50 border=0></a></TD>
+		<TD background="images/top1_02.gif" WIDTH=380 HEIGHT=50 align=right>
+			 
+	 
+	<select name="selectURL" onChange="parent.main.location.href=window.document.disciplineForm.selectURL.options[window.document.disciplineForm.selectURL.selectedIndex].value;return true;" style="font-family:Verdana, Arial, Helvetica;font-size:13px;font-weight:normal;color:black;background:#D9ECEF;">   
+	 
+    	<option selected value="main.html">|-Navigation-|</option>
+    	<option value="main.html">------------------------</option>
+				<option value="main.html">_____|Home|_____</option>
+				<option value="Programs Folder">_____|Programs</option>					
+				<option value="Test Items">_____|Test Items</option>					
+				<option value="Instructor's Manual">_____|Instructor's Manual</option>					
+				<option value="Readme">_____|Read Me</option>					
+				<option value="main.html">------------------------</option>
+				<option value="main.html">|-Install-|</option>
+    				<option value="main.html">------------------------</option>
+				<option value="ar405eng.exe">_____|Acrobat Reader</option>					
+				</font></select>	
+				 
+			 
+			</TD>
+	</TR>
+</TABLE>
+	  </form> 
+
+ 	
+
+			
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>splash</TITLE>
+
+     <style>
+     <!--
+       a:link        { font-family:"geneva", "arial"; text-decoration:none; font-size:13px; weight: bold; color:#11436F }
+	   a:visited     { font-family:"geneva", "arial"; text-decoration:none; font-size:13px; weight: bold; color:#11436F }
+	   a:active      { font-family:"geneva", "arial"; text-decoration:none; font-size:13px; weight: bold; color:#ff0000 }
+	   a:hover       { font-family:"geneva", "arial"; text-decoration:none; font-size:13px; weight: bold; color:#ff0000 }
+	   LI         	 { font-family:"geneva", "arial"; text-decoration:none; font-size:12px; weight: bold; color:#000000 }
+	   TD	 		 { font-family:"geneva", "arial"; text-decoration:none; font-size:12px; weight: bold; color:#000000 }
+	   .copytext		 {font-family:Arial;font-size:10px;color:black;}	
+//-->
+     </style> 
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</HEAD>
+<body bgcolor=#0F7F91 tompmargin=0 leftmargin=0 marginheight=0 marginwidth=0 onLoad="MM_preloadImages('images/test_05_01a.gif','images/test_05_02a.gif','images/test_05_03a.gif','images/test_05_04a.gif')">
+<TABLE WIDTH=640 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD>
+			<IMG SRC="images/test_01.gif" WIDTH=95 HEIGHT=181></TD>
+		<TD>
+			<IMG SRC="images/test_02a.gif" WIDTH=532 HEIGHT=181></TD>
+		<TD>
+			<IMG SRC="images/test_03.gif" WIDTH=13 HEIGHT=181></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/test_04.gif" WIDTH=95 HEIGHT=22></TD>
+		<TD>
+			<TABLE WIDTH=532 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+				   <TR>
+				   		
+          <TD> <a href="Programs%20Folder" onClick="MM_nbGroup('down','group1','test_05_01','images/test_05_01a.gif',1)" onMouseOver="MM_nbGroup('over','test_05_01','images/test_05_01a.gif','images/test_05_01a.gif',1)" onMouseOut="MM_nbGroup('out')"><IMG SRC="images/test_05_01.gif" WIDTH=105 HEIGHT=22 name="test_05_01" border="0" onLoad=""></a></TD>
+				 		
+          <TD> <a href="Test%20Items" onClick="MM_nbGroup('down','group1','test_05_02','images/test_05_02a.gif',1)" onMouseOver="MM_nbGroup('over','test_05_02','images/test_05_02a.gif','images/test_05_02a.gif',1)" onMouseOut="MM_nbGroup('out')"><IMG SRC="images/test_05_02.gif" WIDTH=111 HEIGHT=22 name="test_05_02" border="0" onLoad=""></a></TD>
+				 		
+          <TD> <a href="Instructor%27s%20Manual" onClick="MM_nbGroup('down','group1','test_05_03','images/test_05_03a.gif',1)" onMouseOver="MM_nbGroup('over','test_05_03','images/test_05_03a.gif','images/test_05_03a.gif',1)" onMouseOut="MM_nbGroup('out')"><IMG SRC="images/test_05_03.gif" WIDTH=203 HEIGHT=22 name="test_05_03" border="0" onLoad=""></a></TD>
+				 		
+          <TD> <a href="Readme" onClick="MM_nbGroup('down','group1','test_05_04','images/test_05_04a.gif',1)" onMouseOver="MM_nbGroup('over','test_05_04','images/test_05_04a.gif','images/test_05_04a.gif',1)" onMouseOut="MM_nbGroup('out')"><IMG SRC="images/test_05_04.gif" WIDTH=113 HEIGHT=22 name="test_05_04" border="0" onLoad=""></a></TD>
+				 </TR>
+			</TABLE></TD>
+		<TD>
+			<IMG SRC="images/test_06.gif" WIDTH=13 HEIGHT=22></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/test_07.gif" WIDTH=95 HEIGHT=277></TD>
+		<TD background="images/test_08.gif" WIDTH=532 HEIGHT=277 valign=center>
+			If you do not have ACROBAT READER<sup><SMALL>TM</SMALL></sup> installed, please select one of the following:
+			<blockquote><li>Install lastest version of ACROBAT<sup><SMALL>TM</SMALL></sup> from  <a href="http://www.adobe.com/products/acrobat/readstep2.html" target="new">ADOBE</a> 
+     						(requires internet connection)<br> 
+     						<li>Install <a href="ar405eng.exe">ACROBAT VERSION 4.05</a>(from CD)</blockquote>
+			To use this CD, we recommend that you use version 4 or greater of either Microsoft Internet Explorer or Netscape Navigator. .<br>
+			<img src="images/clear.gif" border=0" height="125"><br>
+			<span class="copytext">
+			© 2001 <a href="http://www.prenhall.com" target="new">Prentice Hall Inc.</a> / Upper Saddle River, New Jersey 07458 / <a href="notice/legal.html" target="main">Legal Notice</a> /<a href="notice/privacy.html" target="main">Privacy Statement</a>
+				</span>
+				
+			</TD>
+		<TD>
+			<IMG SRC="images/test_09.gif" WIDTH=13 HEIGHT=277></TD>
+	</TR>
+</TABLE>
+
+</BODY>
+</HTML>

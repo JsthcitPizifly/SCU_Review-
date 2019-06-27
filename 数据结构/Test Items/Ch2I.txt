@@ -1,0 +1,94 @@
+Chapter 2  Mathematical Preliminaries: Instructor's CD questions
+
+1. A set has the following properties:
+a) May have duplicates, element have a position.
+b) May have duplicates, elements do not have a position.
+c) May not have duplicates, elements have a position.
+*d) May not have duplicates, elements do not have a position.
+
+2. A sequence has the following properties:
+*a) May have duplicates, element have a position.
+b) May have duplicates, elements do not have a position.
+c) May not have duplicates, elements have a position.
+d) May not have duplicates, elements do not have a position.
+
+3. For set P, the notation |P| indicates
+*a) The number of elements in P.
+b) The inverse of P.
+c) The powerset of P.
+d) None of the above.
+
+4. Assume that P contains n elements.  The number of sets in the
+powerset of P is
+a) n
+b) n^2
+*c) 2^n
+d) 2^n - 1
+e) 2^n + 1
+
+5. If a sequence has n values, then the number of permutations for
+that sequence will be
+a) n
+b) n^2
+c) n^2 - 1
+d) 2^n
+*e) n!
+
+6. If R is a binary relation over set S, then R is reflexive if
+*a) aRa for all a in S.
+b) whenever aRb, then bRa, for all a, b in S.
+c) whenever aRb and bRa, then a = b, for all a, b in S.
+d) whenever aRb and aRc, then aRc, for all a, b, c in S.
+
+7. If R is a binary relation over set S, then R is transitive if
+a) aRa for all a in S.
+b) whenever aRb, then bRa, for all a, b in S.
+c) whenever aRb and bRa, then a = b, for all a, b in S.
+*d) whenever aRb and aRc, then aRc, for all a, b, c in S.
+
+8. R is an equivalence relation on set S if it is
+*a) reflexive, symmetric, transitive.
+b) reflexive, antisymmetric, transitive.
+c) symmetric, transitive.
+d) antisymmetric, transitive.
+e) irreflexive, symmetric, transitive.
+f) irreflexive, antisymmetric, transitive.
+
+9. For the powerset of integers, the subset operation defines
+*a) a partial order.
+b) a total order.
+c) a transitive order.
+d) none of the above.
+
+10. log nm is equal to
+a) n + m
+*b) log n + log m
+c) m log n
+d) log n - log m
+
+11. A close-form solution is
+a) an analysis for a program.
+*b) an equation that directly computes the value of a summation.
+c) a complete solution for a problem.
+
+12. Mathematical induction is most like
+a) iteration.
+*b) recursion.
+c) branching.
+d) divide and conquer.
+
+13. A recurrence relation is often used to model programs with
+a) for loops.
+b) branch control like "if" statements.
+*c) recursive calls.
+d) function calls.
+
+14. Which of the following is not a good proof technique.
+a) proof by contradiction.
+*b) proof by example.
+c) proof by mathematical induction.
+
+15. We can use mathematical induction to:
+a) Find a closed-form solution for a summation.
+*b) Verify a proposed closed-form solution for a summation.
+c) Both find and verify a closed-form solution for a summation.
